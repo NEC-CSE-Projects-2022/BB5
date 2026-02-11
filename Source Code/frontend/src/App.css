@@ -1,0 +1,94 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== ROOT ===== */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #0b0f1a; /* Base dark bg */
+  color: #e6e9ff;
+  overflow-x: hidden; /* Prevent side scroll */
+}
+
+/* ===== APP WRAPPER ===== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== PAGE CONTENT ===== */
+/* Important → Prevents navbar overlap */
+.page-content {
+  flex: 1;
+  padding-top: 90px; /* Same as navbar height */
+}
+
+/* ===== DEFAULT TEXT ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+p {
+  line-height: 1.7;
+  color: #b8c1ff;
+}
+
+/* ===== LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00c6ff, #7f53ff);
+  border-radius: 10px;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: #7f53ff;
+  color: white;
+}
+
+/* ===== RESPONSIVE FIT ===== */
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== SECTION FIT FIX ===== */
+section {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===== FOOTER FIX ===== */
+footer {
+  margin-top: auto;
+}

@@ -1,0 +1,184 @@
+/* ===== REMOVE WHITE BACKGROUND FROM ROOT ===== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #0b0f1a;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.page-container {
+  font-family: "Poppins", sans-serif;
+  color: #e6e9ff;
+  min-height: 100vh;
+  padding: 110px 8% 80px 8%;
+  overflow-x: hidden;
+
+  background: linear-gradient(
+    270deg,
+    #0b0f1a,
+    #11182a,
+    #0b0f1a,
+    #121933
+  );
+  background-size: 600% 600%;
+  animation: bgMove 18s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== STICKY NAVBAR FIX ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(14px);
+  background: rgba(10,14,25,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== HEADINGS ===== */
+.page-container h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg,#00c6ff,#7f53ff,#00ffa6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-container h3 {
+  margin-top: 60px;
+  margin-bottom: 18px;
+  font-size: 24px;
+
+  background: linear-gradient(90deg,#00c6ff,#7f53ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== TEXT ===== */
+.page-container p {
+  color: #b8c1ff;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+/* ===== LISTS ===== */
+.page-container ul {
+  color: #c9d1ff;
+  line-height: 1.7;
+}
+
+.sub-list {
+  margin-top: 8px;
+  margin-left: 25px;
+  color: #aab0ff;
+}
+
+/* ===== OFFICIAL LINK BUTTON ===== */
+.dataset-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+
+  background: linear-gradient(90deg,#00c6ff,#7f53ff);
+  box-shadow: 0 0 20px rgba(127,83,255,0.4);
+  transition: 0.3s ease;
+}
+
+.dataset-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(127,83,255,0.7);
+}
+
+/* ===== DOWNLOAD GRID (STRICT 2 COLUMNS) ===== */
+.download-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* ===== GLASS DOWNLOAD BUTTONS ===== */
+.download-grid button {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.01)
+  );
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    inset 0 0 20px rgba(127,83,255,0.08);
+
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine animation */
+.download-grid button::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -50%;
+  width: 200%;
+  height: 300%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.download-grid button:hover::before {
+  top: 100%;
+}
+
+.download-grid button:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 30px 80px rgba(127,83,255,0.45),
+    inset 0 0 30px rgba(127,83,255,0.15);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .page-container {
+    padding: 90px 6% 60px 6%;
+  }
+
+  .page-container h2 {
+    font-size: 30px;
+  }
+
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+}
